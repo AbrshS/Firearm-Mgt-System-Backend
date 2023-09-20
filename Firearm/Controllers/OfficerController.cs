@@ -79,6 +79,28 @@ namespace Firearm.Controllers
 
         // Delete a firearm using the new Guid ID
 
+        // Delete an officer by ID
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteOfficer([FromRoute] int id)
+        {
+            var officerToDelete = await firearmDbContext.Officers.FirstOrDefaultAsync(f => f.Id == id);
+            if (officerToDelete != null)
+            {
+                try
+                {
+                    firearmDbContext.Officers.Remove(officerToDelete);
+                    await firearmDbContext.SaveChangesAsync();
+                    return Ok("Officer deleted successfully");
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception and return an error response
+                    return StatusCode(500, "An error occurred while deleting the officer: " + ex.Message);
+                }
+            }
+            return NotFound("Officer Not Found");
+        }
+
 
     }
 }

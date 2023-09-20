@@ -92,6 +92,13 @@ namespace Firearm.Controllers
 
         // Delete a firearm using the new Guid ID
 
+        [HttpGet("total-firearms")]
+        public async Task<IActionResult> GetTotalFirearms()
+        {
+            var totalFirearms = await firearmDbContext.Firearms.CountAsync();
+            return Ok(totalFirearms);
+        }
+
 
     }
 }
