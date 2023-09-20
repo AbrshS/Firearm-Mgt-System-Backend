@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Firearm.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialDb : Migration
+    public partial class IntialDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -37,6 +37,34 @@ namespace Firearm.Migrations
                 {
                     table.PrimaryKey("PK_Firearms", x => x.firearmId);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Officers",
+                columns: table => new
+                {
+                    OfficerId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Position = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredPosition = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredFullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredSignature = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    RegisteredBodyFullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredBodyResponsibility = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredBodySignature = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredBodyDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Officers", x => x.OfficerId);
+                });
         }
 
         /// <inheritdoc />
@@ -44,6 +72,9 @@ namespace Firearm.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Firearms");
+
+            migrationBuilder.DropTable(
+                name: "Officers");
         }
     }
 }

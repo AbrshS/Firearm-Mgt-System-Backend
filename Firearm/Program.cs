@@ -17,6 +17,7 @@ builder.Services.AddDbContext<FirearmDbContext>(Options => Options.UseSqlServer(
     .Configuration.GetConnectionString("FirearmsDbConnectionString")));
        
 
+
 builder.Services.AddCors((setup) =>
 {
     setup.AddPolicy("default", (options) =>

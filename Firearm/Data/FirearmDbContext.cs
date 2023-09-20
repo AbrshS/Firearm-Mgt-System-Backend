@@ -11,6 +11,8 @@ namespace Firearm.Data
 
         // Define DbSet for your entity (use the fully qualified name)
         public DbSet<Firearm.Controllers.Models.Firearm> Firearms { get; set; }
+        public DbSet<Officer> Officers { get; set; }
+
     }
 }
   
