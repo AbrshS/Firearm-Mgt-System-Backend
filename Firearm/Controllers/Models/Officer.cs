@@ -15,7 +15,15 @@ namespace Firearm.Controllers.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Description { get; set; }
-
+        // Firearm Detail 
+        public string FirearmType { get; set; }
+        public string FirearmModel { get; set; }
+        public string FirearmMechanism { get; set; }
+        public string FirearmCalibre { get; set; }
+        public string MagazineCapacity { get; set; }
+        public string Manufacturer { get; set; }
+        public int YearManufacture { get; set; }
+        public string Source { get; set; }
         // The body that registered the weapon
         public string RegisteredPosition { get; set; }
         public string RegisteredFullName { get; set; }
@@ -23,6 +31,7 @@ namespace Firearm.Controllers.Models
         public string RegisteredEmail { get; set; }
         public string RegisteredSignature { get; set; }
         public DateTime RegisteredDate { get; set; }
+       
 
         // The registered body
         public string RegisteredBodyFullName { get; set; }

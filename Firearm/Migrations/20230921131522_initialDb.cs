@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Firearm.Migrations
 {
     /// <inheritdoc />
-    public partial class IntialDb : Migration
+    public partial class initialDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -50,6 +50,14 @@ namespace Firearm.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirearmType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirearmModel = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirearmMechanism = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirearmCalibre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MagazineCapacity = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Manufacturer = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    YearManufacture = table.Column<int>(type: "int", nullable: false),
+                    Source = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RegisteredPosition = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RegisteredFullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RegisteredTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
