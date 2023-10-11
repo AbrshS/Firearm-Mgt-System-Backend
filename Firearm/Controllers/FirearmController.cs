@@ -3,7 +3,9 @@ using Firearm.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Threading.Tasks;
+using System.Threading.Tasks; 
+
+
 
 namespace Firearm.Controllers
 {
@@ -66,7 +68,6 @@ namespace Firearm.Controllers
             {
                 // Update the properties of the existing firearm
                 existingFirearm.ManufacturerSerial = firearm.ManufacturerSerial;
-                existingFirearm.AssignedSerial = firearm.AssignedSerial;
                 existingFirearm.DateMarked =  firearm.DateMarked;
                 existingFirearm.MarkedBy = firearm.MarkedBy;
                 existingFirearm.FirearmType = firearm.FirearmType;
@@ -90,15 +91,57 @@ namespace Firearm.Controllers
 
         // Implement other actions such as Delete, if needed
 
-        // Delete a firearm using the new Guid ID
 
         [HttpGet("total-firearms")]
         public async Task<IActionResult> GetTotalFirearms()
         {
             var totalFirearms = await firearmDbContext.Firearms.CountAsync();
             return Ok(totalFirearms);
+        } 
+
+        // Delete a firearm using the new Guid ID
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteFirearm([FromRoute] int id)
+        {
+            var firearmToDelete = await firearmDbContext.Firearms.FirstOrDefaultAsync(f => f.Id == id);
+
+            if (firearmToDelete == null)
+            {
+                return NotFound("Officer not found");
+            }
+
+            try
+            {
+                firearmDbContext.Firearms.Remove(firearmToDelete);
+                await firearmDbContext.SaveChangesAsync();
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception for debugging purposes
+                // Consider returning a more detailed error message for production
+                return StatusCode(500, "An error occurred while deleting the officer: " + ex.Message);
+            }
         }
+
+        // Add a new action to count firearms where IsFirearm is true
+        [HttpGet("count-true-firearms")]
+        public async Task<IActionResult> CountTrueFirearms()
+        {
+            try
+            {
+                var count = await firearmDbContext.Firearms.CountAsync(f => f.IsFirearm);
+                return Ok(count);
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception and return an error response
+                return StatusCode(500, "An error occurred while counting true firearms: " + ex.Message);
+            }
+        }
+         
 
 
     }
-}
+}  

@@ -65,7 +65,7 @@ namespace Firearm.Controllers
             if (existingOfficer != null)
             {
                 // Update the properties of the existing firearm
-              
+                
 
                 // Update other propertes here
 
@@ -99,7 +99,17 @@ namespace Firearm.Controllers
                 }
             }
             return NotFound("Officer Not Found");
+        } 
+
+        [HttpGet("total-officer")]
+        public async Task<IActionResult> GetTotalOfficer()
+        {
+            var totalOfficers = await firearmDbContext.Officers.CountAsync();
+            return Ok(totalOfficers);
         }
+          
+
+
 
 
     }
