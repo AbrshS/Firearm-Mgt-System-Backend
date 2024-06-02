@@ -32,11 +32,9 @@ namespace Firearm.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AcadamicStatus")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AdditionalComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateMarked")
@@ -46,143 +44,114 @@ namespace Firearm.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("District")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmCalibre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmMechanism")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmModel")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Fullname")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsFirearm")
                         .HasColumnType("bit");
 
                     b.Property<string>("Kebele")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MagazineCapacity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manufacturer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ManufacturerSerial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MarkedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MartialStatus")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MedicalStatus")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nationality")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Occupation")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PassportId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredBodyDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredBodyFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodyResponsibility")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodySignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredPosition")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredSignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredTitle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sex")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SizeOfCapital")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Source")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SpecificArea")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Store")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Subcity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("YearManufacture")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("homenumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("phonenumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -200,15 +169,16 @@ namespace Firearm.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AdditionalComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("AuthorizationDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("AuthorizedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateDestroyed")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateMarked")
                         .HasColumnType("datetime2");
@@ -217,58 +187,49 @@ namespace Firearm.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DestructionRequestedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmCalibre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmMechanism")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmModel")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsFirearm")
                         .HasColumnType("bit");
 
                     b.Property<string>("MagazineCapacity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manufacturer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ManufacturerSerial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MarkedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReasonForDestruction")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Source")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Store")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("YearManufacture")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -285,84 +246,94 @@ namespace Firearm.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AdditionalComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AuthorizedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("AuthorizedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateAdded")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateMarked")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirearmCalibre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmMechanism")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmModel")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmReturnedTo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsFirearm")
                         .HasColumnType("bit");
 
                     b.Property<string>("MagazineCapacity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manufacturer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ManufacturerSerial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MarkedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReasonToReturn")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReportedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Source")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Store")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("YearManufacture")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Firearms");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.FirearmHolders", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("DestroyedId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("firearmHolders");
                 });
 
             modelBuilder.Entity("Firearm.Controllers.Models.Hmts", b =>
@@ -375,134 +346,108 @@ namespace Firearm.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AdditionalComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CountryOfOrigin")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateMarked")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("District")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmCalibre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmMechanism")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmModel")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsFirearm")
                         .HasColumnType("bit");
 
                     b.Property<string>("LevelOfService")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LicensedCountry")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MagazineCapacity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manufacturer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ManufacturerSerial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MarkedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PassportNo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredBodyDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredBodyFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodyResponsibility")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodySignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredPosition")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredSignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredTitle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Source")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SpecificArea")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Store")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Subcity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("YearManufacture")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("kebele")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("registeredResponsibility")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -515,154 +460,125 @@ namespace Firearm.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("poagId");
+                        .HasColumnName("iofcPendingId");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AdditionalComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CandidateCountry")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ComingDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CountryOfResidence")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateMarked")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("District")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EvidenceOfMedical")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmCalibre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmMechanism")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmModel")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsFirearm")
                         .HasColumnType("bit");
 
                     b.Property<string>("MagazineCapacity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manufacturer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ManufacturerSerial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MarkedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PassportNo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReasonHeCame")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Region")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredBodyDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredBodyFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodyResponsibility")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodySignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredPosition")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredSignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredTitle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Source")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SpecificArea")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Store")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Subcity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("YearManufacture")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("kebele")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("registeredResponsibility")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -680,80 +596,97 @@ namespace Firearm.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AdditionalComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Comment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateLost")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateMarked")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirearmCalibre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmMechanism")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmModel")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FpId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsFirearm")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Lholder")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("MagazineCapacity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manufacturer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ManufacturerSerial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MarkedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ReportedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Source")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Store")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("YearManufacture")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Losses");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.Notification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("NotificationId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("SentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("store")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("userFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("notifications");
                 });
 
             modelBuilder.Entity("Firearm.Controllers.Models.Officer", b =>
@@ -766,123 +699,96 @@ namespace Firearm.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AdditionalComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateMarked")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmCalibre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmMechanism")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmModel")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FpId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Holder")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsFirearm")
                         .HasColumnType("bit");
 
                     b.Property<string>("MagazineCapacity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manufacturer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ManufacturerSerial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MarkedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Oholder")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Position")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredBodyDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredBodyFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodyResponsibility")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodySignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredEmail")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredPosition")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredSignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredTitle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Source")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Store")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("YearManufacture")
@@ -891,6 +797,116 @@ namespace Firearm.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Officers");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.OfficerPending", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("OfficerPendingId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdditionalComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateMarked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmCalibre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmMechanism")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmModel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FpId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsFirearm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MagazineCapacity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManufacturerSerial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarkedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredBodyDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredBodyFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodyResponsibility")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodySignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredPosition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredSignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Store")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("YearManufacture")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("officerPendings");
                 });
 
             modelBuilder.Entity("Firearm.Controllers.Models.Poag", b =>
@@ -903,139 +919,923 @@ namespace Firearm.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AdditionalComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateMarked")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("District")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmCalibre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmMechanism")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmModel")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirearmType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsFirearm")
                         .HasColumnType("bit");
 
                     b.Property<string>("MagazineCapacity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manufacturer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ManufacturerSerial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MarkedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NameOfOrganisation")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Region")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredBodyDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredBodyFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodyResponsibility")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBodySignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RegisteredFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredPosition")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredSignature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredTitle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SizeOfCapital")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Source")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SpecificArea")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Store")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Subcity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("YearManufacture")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("kebele")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("registeredResponsibility")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("sector")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Poages");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("userId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AccountType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EFPID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Extension")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Job")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LoginIcon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MiddleName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Mobile")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Unit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("nameid")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("users");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.Withdrawal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("withdrawId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ManufacturerSerial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("WithdrawalDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("withdrawals");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.civillianPending", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("CivillianPendingId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AcadamicStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AdditionalComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateMarked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("District")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmCalibre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmMechanism")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmModel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fullname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsFirearm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Kebele")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MagazineCapacity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManufacturerSerial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarkedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MartialStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MedicalStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nationality")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Occupation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PassportId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredBodyDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredBodyFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodyResponsibility")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodySignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredPosition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredSignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SizeOfCapital")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SpecificArea")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("State")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Store")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subcity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("YearManufacture")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("homenumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("phonenumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("civillianPendings");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.distructionPending", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("distructionPendingId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdditionalComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("AuthorizationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("AuthorizedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateDestroyed")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateMarked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DestructionDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DestructionRequestedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmCalibre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmMechanism")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmModel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsFirearm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MagazineCapacity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManufacturerSerial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarkedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonForDestruction")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Store")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("YearManufacture")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("distructionPendings");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.hmtsPending", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("hmtsPendingId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdditionalComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CountryOfOrigin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateMarked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("District")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmCalibre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmMechanism")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmModel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsFirearm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LevelOfService")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LicensedCountry")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MagazineCapacity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManufacturerSerial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarkedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PassportNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredBodyDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredBodyFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodyResponsibility")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodySignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredPosition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredSignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SpecificArea")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Store")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subcity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("YearManufacture")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("kebele")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("registeredResponsibility")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("hmtsPendings");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.iofcPending", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("iofcPendingId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdditionalComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CandidateCountry")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ComingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CountryOfResidence")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateMarked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("District")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EvidenceOfMedical")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmCalibre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmMechanism")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmModel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsFirearm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MagazineCapacity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManufacturerSerial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarkedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PassportNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonHeCame")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Region")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredBodyDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredBodyFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodyResponsibility")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodySignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredPosition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredSignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SpecificArea")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Store")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subcity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("YearManufacture")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("kebele")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("registeredResponsibility")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("iofcPendings");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.lossPending", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("lossPendingId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdditionalComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateLost")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateMarked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirearmCalibre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmMechanism")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmModel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FpId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsFirearm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MagazineCapacity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManufacturerSerial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarkedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ReportedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Store")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("YearManufacture")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("losspendings");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.poagPending", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("poagOfficerId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdditionalComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateMarked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("District")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmCalibre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmMechanism")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmModel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsFirearm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MagazineCapacity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManufacturerSerial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarkedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameOfOrganisation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Region")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredBodyDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredBodyFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodyResponsibility")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredBodySignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RegisteredFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredPosition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredSignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RegisteredTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SizeOfCapital")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SpecificArea")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Store")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subcity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("YearManufacture")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("kebele")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("registeredResponsibility")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("sector")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("poagPendings");
+                });
+
+            modelBuilder.Entity("Firearm.Controllers.Models.recoverPending", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("recoverPendingId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdditionalComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorizedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("AuthorizedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateMarked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirearmCalibre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmMechanism")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmModel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmReturnedTo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirearmType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsFirearm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MagazineCapacity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManufacturerSerial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarkedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonToReturn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReportedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Store")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("YearManufacture")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("recoverPendings");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,8 +14,8 @@ namespace Firearm.Controllers
         public RecoveryController(FirearmDbContext firearmDbContext)
         {
             this.firearmDbContext = firearmDbContext;
-        }  
-
-        //Get Recovery 
+        }
+         
+        //Get Recovery       
     }
 }

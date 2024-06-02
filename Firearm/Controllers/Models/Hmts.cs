@@ -5,9 +5,9 @@ namespace Firearm.Controllers.Models
     public class Hmts
     {
         [Column("firearmId")]
-        public int Id { get; set; } 
+        public int Id { get; set; }
 
-        public string CountryOfOrigin { get; set; } 
+        public string CountryOfOrigin { get; set; }
         public string LicensedCountry { get; set; }
 
         public string LevelOfService { get; set; }
@@ -18,7 +18,7 @@ namespace Firearm.Controllers.Models
 
         public string kebele { get; set; }
 
-        public string SpecificArea { get; set; } 
+        public string SpecificArea { get; set; }
 
         public string PassportNo { get; set; }
         public string PhoneNumber { get; set; }
@@ -54,5 +54,6 @@ namespace Firearm.Controllers.Models
         public string RegisteredBodyResponsibility { get; set; }
         public string RegisteredBodySignature { get; set; }
         public DateTime RegisteredBodyDate { get; set; }
+        public string holder { get; set; }
     }
 }

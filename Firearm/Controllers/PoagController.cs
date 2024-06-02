@@ -7,10 +7,10 @@ namespace Firearm.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PoagController : Controller 
+    public class PoagController : Controller
 
     {
-        
+
 
         private readonly FirearmDbContext firearmDbContext;
 
@@ -46,7 +46,7 @@ namespace Firearm.Controllers
         {
             try
             {
-                
+
                 await firearmDbContext.Poages.AddAsync(poag);
                 await firearmDbContext.SaveChangesAsync();
                 return CreatedAtAction(nameof(AddPoag), new { id = poag.Id }, poag);

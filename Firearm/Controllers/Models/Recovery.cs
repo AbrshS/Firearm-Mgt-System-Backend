@@ -8,7 +8,7 @@ namespace Firearm.Controllers.Models
 
         //Recovery condition details:- this details are when the firearm is recoverd from lost 
         [Column("firearmId")]
-        public int Id { get; set; } 
+        public int Id { get; set; }
 
         public string FirearmReturnedTo { get; set; }
 
@@ -25,9 +25,9 @@ namespace Firearm.Controllers.Models
          * first for the first time when the firearm is registered 
          * second when its recovered 
          * third when its returned */
-                                               
-        public string Status { get; set; } 
-         
+
+        public string Status { get; set; }
+
 
         //firearm to returned 
         public string ManufacturerSerial { get; set; }
@@ -41,9 +41,9 @@ namespace Firearm.Controllers.Models
         public string MagazineCapacity { get; set; }
         public string Manufacturer { get; set; }
         public DateTime YearManufacture { get; set; }
-        public string Source { get; set; } 
+        public string Source { get; set; }
         public string Store { get; set; }
         public string AdditionalComment { get; set; }
 
-    } 
+    }
 }

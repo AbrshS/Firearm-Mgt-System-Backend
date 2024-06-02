@@ -1,14 +1,11 @@
-﻿using Firearm.Controllers.Models;
-using Firearm.Data;
+﻿using Firearm.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Threading.Tasks;
 
 namespace Firearm.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")] 
+    [Route("api/[controller]")]
     public class DestroyedController : Controller
     {
         private readonly FirearmDbContext firearmDbContext;
@@ -48,7 +45,7 @@ namespace Firearm.Controllers
         {
             try
             {
-
+                destroyed.DateDestroyed = DateTime.UtcNow; // Set the DateLost property to the current date/time
                 await firearmDbContext.Destroyeds.AddAsync(destroyed);
                 await firearmDbContext.SaveChangesAsync();
                 return CreatedAtAction(nameof(AddDestroyed), new { id = destroyed.Id }, destroyed);
@@ -80,22 +77,19 @@ namespace Firearm.Controllers
         }
 
 
-
-
-
         // Delete an lossfirearm by ID
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDestroyed([FromRoute] int id)
-        { 
+        {
             var DestroyedToDelete = await firearmDbContext.Destroyeds.FirstOrDefaultAsync(f => f.Id == id);
             if (DestroyedToDelete != null)
             {
                 try
-                {                                                     
+                {
                     firearmDbContext.Destroyeds.Remove(DestroyedToDelete);
                     await firearmDbContext.SaveChangesAsync();
                     return Ok("Destroyed firearm deleted successfully");
-                } 
+                }
 
                 catch (Exception ex)
                 {
@@ -113,6 +107,84 @@ namespace Firearm.Controllers
             return Ok(totaldestroyed);
         }
 
+
+        [HttpGet("count-destroyed/day")]
+        public async Task<IActionResult> CountDestroyedByDay()
+        {
+            try
+            {
+                var startDate = DateTime.Today; // Start of the current day
+                var endDate = startDate.AddDays(1); // End of the current day
+                var destroyedCount = await firearmDbContext.Destroyeds
+                    .Where(d => d.DateDestroyed >= startDate && d.DateDestroyed < endDate)
+                    .CountAsync();
+
+                return Ok(destroyedCount);
+            } 
+
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while counting destroyed items for the day: " + ex.Message);
+            }
+        }
+
+
+        [HttpGet("count-destroyed/week")]
+        public async Task<IActionResult> CountDestroyedByWeek()
+        {
+            try
+            {
+                var startDate = DateTime.Today.AddDays(-7); // Start of the week (7 days ago)
+                var endDate = DateTime.Today.AddDays(1); // End of the current day
+                var DestroyedCount = await firearmDbContext.Destroyeds
+                    .Where(l => l.DateDestroyed >= startDate && l.DateDestroyed < endDate)
+                    .CountAsync();
+
+                return Ok(DestroyedCount);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while counting losses for the week: " + ex.Message);
+            }
+        }
+
+        [HttpGet("count-destroyed/month")]
+        public async Task<IActionResult> CountDestroyedLossesByMonth()
+        {
+            try
+            {
+                var startDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1); // Start of the current month
+                var endDate = startDate.AddMonths(1); // Start of the next month
+                var DestroyedCount = await firearmDbContext.Destroyeds
+                    .Where(l => l.DateDestroyed >= startDate && l.DateDestroyed < endDate)
+                    .CountAsync();
+
+                return Ok(DestroyedCount);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while counting losses for the month: " + ex.Message);
+            }
+        }
+
+        [HttpGet("count-destroyed/year")]
+        public async Task<IActionResult> CountDestroyedLossesByYear()
+        {
+            try
+            {
+                var startDate = new DateTime(DateTime.Today.Year, 1, 1); // Start of the current year
+                var endDate = startDate.AddYears(1); // Start of the next year
+                var DestroyedCount = await firearmDbContext.Destroyeds
+                    .Where(l => l.DateDestroyed >= startDate && l.DateDestroyed < endDate)
+                    .CountAsync();
+
+                return Ok(DestroyedCount);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while counting losses for the year: " + ex.Message);
+            }
+        }
+
     }
 }
-              

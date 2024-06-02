@@ -1,7 +1,8 @@
-﻿using Firearm.Controllers.Models;
-using Firearm.Data;
+﻿using Firearm.Data;
+using Firearm.Controllers.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
@@ -9,108 +10,168 @@ namespace Firearm.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class OfficerController : Controller
+    public class OfficerController : ControllerBase
     {
-        private readonly FirearmDbContext firearmDbContext;
+        private readonly FirearmDbContext _firearmDbContext;
+        private readonly ILogger<OfficerController> _logger;
 
-        public OfficerController(FirearmDbContext firearmDbContext)
+        public OfficerController(FirearmDbContext firearmDbContext, ILogger<OfficerController> logger)
         {
-            this.firearmDbContext = firearmDbContext;
+            _firearmDbContext = firearmDbContext;
+            _logger = logger;
         }
 
         // Get all Officers
         [HttpGet]
         public async Task<IActionResult> GetAllOfficer()
         {
-            var Officer = await firearmDbContext.Officers.ToListAsync();
-            return Ok(Officer);
-        }
-
-        // Get single firearm using the new Guid ID
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetOfficer([FromRoute] int id)
-        {
-            var Officer = await firearmDbContext.Officers.FirstOrDefaultAsync(f => f.Id == id);
-            if (Officer == null)
-            {
-                return NotFound("Officer not Found");
-            }
-            return Ok(Officer);
-        }
-
-        // Add a firearm with a new Guid ID
-        [HttpPost]
-        public async Task<IActionResult> AddOfficer([FromBody] Firearm.Controllers.Models.Officer officer)
-        {
+            _logger.LogInformation("Getting all officers");
             try
             {
-                //firearm.Id = Guid.NewGuid(); // Generate a new Guid for the ID
-                await firearmDbContext.Officers.AddAsync(officer);
-                await firearmDbContext.SaveChangesAsync();
-                return CreatedAtAction(nameof(AddOfficer), new { id = officer.Id }, officer);
+                var officers = await _firearmDbContext.Officers.ToListAsync();
+                return Ok(officers);
             }
             catch (Exception ex)
             {
-                // Handle the exception and return an error response
-                return StatusCode(500, "An error occurred while adding the firearm: " + ex.Message);
+                _logger.LogError(ex, "Error occurred while getting all officers");
+                return StatusCode(500, "Internal server error");
             }
-
         }
 
-        // Update a firearm using the new Guid ID
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateOfficer([FromRoute] int id, [FromBody] Firearm.Controllers.Models.Officer officer)
+        // Get single officer by ID
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetOfficer([FromRoute] int id)
         {
-            var existingOfficer = await firearmDbContext.Firearms.FirstOrDefaultAsync(f => f.Id == id);
-            if (existingOfficer != null)
+            _logger.LogInformation("Getting officer with ID {Id}", id);
+            try
             {
-                // Update the properties of the existing firearm
-                
+                var officer = await _firearmDbContext.Officers.FirstOrDefaultAsync(o => o.Id == id);
+                if (officer == null)
+                {
+                    _logger.LogWarning("Officer with ID {Id} not found", id);
+                    return NotFound("Officer not found");
+                }
+                return Ok(officer);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while getting officer with ID {Id}", id);
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
-                // Update other propertes here
+        // Add a new officer
+        [HttpPost]
+        public async Task<IActionResult> AddOfficer([FromBody] Officer officer)
+        {
+            _logger.LogInformation("Adding a new officer");
+            try
+            {
+                await _firearmDbContext.Officers.AddAsync(officer);
+                await _firearmDbContext.SaveChangesAsync();
+                _logger.LogInformation("Officer added successfully with ID {Id}", officer.Id);
+                return CreatedAtAction(nameof(GetOfficer), new { id = officer.Id }, officer);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while adding officer");
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
-                await firearmDbContext.SaveChangesAsync();
+        // Update an existing officer
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateOfficer([FromRoute] int id, [FromBody] Officer officer)
+        {
+            _logger.LogInformation("Updating officer with ID {Id}", id);
+            try
+            {
+                var existingOfficer = await _firearmDbContext.Officers.FirstOrDefaultAsync(o => o.Id == id);
+                if (existingOfficer == null)
+                {
+                    _logger.LogWarning("Officer with ID {Id} not found", id);
+                    return NotFound("Officer not found");
+                }
+
+                // Update the properties of the existing officer
+                existingOfficer.FullName = officer.FullName;
+                existingOfficer.Title = officer.Title;
+                existingOfficer.Position = officer.Position;
+                existingOfficer.Email = officer.Email;
+                existingOfficer.PhoneNumber = officer.PhoneNumber;
+                existingOfficer.Description = officer.Description;
+                existingOfficer.FirearmType = officer.FirearmType;
+                existingOfficer.FirearmModel = officer.FirearmModel;
+                existingOfficer.Manufacturer = officer.Manufacturer;
+                existingOfficer.FirearmCalibre = officer.FirearmCalibre;
+                existingOfficer.YearManufacture = officer.YearManufacture;
+                existingOfficer.Source = officer.Source;
+                existingOfficer.Holder = officer.Holder;
+                existingOfficer.FirearmMechanism = officer.FirearmMechanism;
+                existingOfficer.ManufacturerSerial = officer.ManufacturerSerial;
+                existingOfficer.RegisteredPosition = officer.RegisteredPosition;
+                existingOfficer.RegisteredFullName = officer.RegisteredFullName;
+                existingOfficer.RegisteredTitle = officer.RegisteredTitle;
+                existingOfficer.RegisteredEmail = officer.RegisteredEmail;
+                existingOfficer.RegisteredSignature = officer.RegisteredSignature;
+                existingOfficer.RegisteredDate = officer.RegisteredDate;
+                existingOfficer.RegisteredBodyFullName = officer.RegisteredBodyFullName;
+                existingOfficer.RegisteredBodyResponsibility = officer.RegisteredBodyResponsibility;
+                existingOfficer.RegisteredBodySignature = officer.RegisteredBodySignature;
+                existingOfficer.RegisteredBodyDate = officer.RegisteredBodyDate;
+
+                await _firearmDbContext.SaveChangesAsync();
+                _logger.LogInformation("Officer with ID {Id} updated successfully", id);
                 return Ok(existingOfficer);
             }
-            return NotFound("Officer Not Found");
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while updating officer with ID {Id}", id);
+                return StatusCode(500, "Internal server error");
+            }
         }
-
-        // Implement other actions such as Delete, if needed
-
-        // Delete a firearm using the new Guid ID
 
         // Delete an officer by ID
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOfficer([FromRoute] int id)
         {
-            var officerToDelete = await firearmDbContext.Officers.FirstOrDefaultAsync(f => f.Id == id);
-            if (officerToDelete != null)
+            _logger.LogInformation("Deleting officer with ID {Id}", id);
+            try
             {
-                try
+                var officerToDelete = await _firearmDbContext.Officers.FirstOrDefaultAsync(o => o.Id == id);
+                if (officerToDelete == null)
                 {
-                    firearmDbContext.Officers.Remove(officerToDelete);
-                    await firearmDbContext.SaveChangesAsync();
-                    return Ok("Officer deleted successfully");
+                    _logger.LogWarning("Officer with ID {Id} not found", id);
+                    return NotFound("Officer not found");
                 }
-                catch (Exception ex)
-                {
-                    // Handle the exception and return an error response
-                    return StatusCode(500, "An error occurred while deleting the officer: " + ex.Message);
-                }
-            }
-            return NotFound("Officer Not Found");
-        } 
 
+                _firearmDbContext.Officers.Remove(officerToDelete);
+                await _firearmDbContext.SaveChangesAsync();
+                _logger.LogInformation("Officer with ID {Id} deleted successfully", id);
+                return Ok("Officer deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while deleting officer with ID {Id}", id);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        // Get the total number of officers
         [HttpGet("total-officer")]
         public async Task<IActionResult> GetTotalOfficer()
         {
-            var totalOfficers = await firearmDbContext.Officers.CountAsync();
-            return Ok(totalOfficers);
+            _logger.LogInformation("Getting the total number of officers");
+            try
+            {
+                var totalOfficers = await _firearmDbContext.Officers.CountAsync();
+                return Ok(totalOfficers);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while getting the total number of officers");
+                return StatusCode(500, "Internal server error");
+            }
         }
-          
-
-
-
-
     }
 }

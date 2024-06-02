@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bezas\\Videos\\EFP FULLSTACK\\API\\Firearm\\Firearm\\Firearm.csproj": {}
+    "D:\\backup\\video\\EFP FULLSTACK\\API\\Firearm\\Firearm\\Firearm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bezas\\Videos\\EFP FULLSTACK\\API\\Firearm\\Firearm\\Firearm.csproj": {
+    "D:\\backup\\video\\EFP FULLSTACK\\API\\Firearm\\Firearm\\Firearm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bezas\\Videos\\EFP FULLSTACK\\API\\Firearm\\Firearm\\Firearm.csproj",
+        "projectUniqueName": "D:\\backup\\video\\EFP FULLSTACK\\API\\Firearm\\Firearm\\Firearm.csproj",
         "projectName": "Firearm",
-        "projectPath": "C:\\Users\\bezas\\Videos\\EFP FULLSTACK\\API\\Firearm\\Firearm\\Firearm.csproj",
+        "projectPath": "D:\\backup\\video\\EFP FULLSTACK\\API\\Firearm\\Firearm\\Firearm.csproj",
         "packagesPath": "C:\\Users\\bezas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bezas\\Videos\\EFP FULLSTACK\\API\\Firearm\\Firearm\\obj\\",
+        "outputPath": "D:\\backup\\video\\EFP FULLSTACK\\API\\Firearm\\Firearm\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bezas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.10, )"
@@ -82,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

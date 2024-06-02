@@ -1,12 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Firearm.Controllers.Models
 {
     public class Firearm
     {
+
+
+       
         //Recovery condition details:- this details are when the firearm is recoverd from lost 
         [Column("firearmId")]
+
         public int Id { get; set; }
         public string FirearmReturnedTo { get; set; }
 
@@ -25,8 +28,6 @@ namespace Firearm.Controllers.Models
          * third when its returned */
 
         public string Status { get; set; }
-
-
         //firearm to returned 
         public string ManufacturerSerial { get; set; }
         public bool IsFirearm { get; set; }
@@ -42,7 +43,10 @@ namespace Firearm.Controllers.Models
         public string Source { get; set; }
         public string Store { get; set; }
         public string AdditionalComment { get; set; }
-    }
+        public DateTime DateAdded { get; internal set; } 
+        public bool IsDeleted { get; internal set;}
+        public string holder { get; set; }
 
     }
 
+}

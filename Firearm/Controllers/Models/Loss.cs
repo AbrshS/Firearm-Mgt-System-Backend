@@ -5,9 +5,8 @@ namespace Firearm.Controllers.Models
     public class Loss
     {
         [Column("LossId")]
-
-        public int Id { get; set; } 
-        public string FullName { get; set; } 
+        public int Id { get; set; }
+        public string FullName { get; set; }
         public string FpId { get; set; }
         public string ManufacturerSerial { get; set; }
         public bool IsFirearm { get; set; }
@@ -21,10 +20,11 @@ namespace Firearm.Controllers.Models
         public string Manufacturer { get; set; }
         public DateTime YearManufacture { get; set; }
         public string Source { get; set; }
-        public string Store { get; set; } 
-        public string Lholder { get; set; }
+        public string Store { get; set; }
+        public string holder { get; set; }
         public string AdditionalComment { get; set; }
-        public DateTime ReportedOn {get; set; } 
+        public DateTime ReportedOn { get; set; }
         public string Comment { get; set; }
+        public DateTime DateLost { get; internal set; }
     }
 }

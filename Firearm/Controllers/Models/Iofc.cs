@@ -4,7 +4,7 @@ namespace Firearm.Controllers.Models
 {
     public class Iofc
     {
-        [Column("poagId")]
+        [Column("iofcPendingId")]
         public int Id { get; set; }
 
         public string FullName { get; set; }
@@ -26,9 +26,9 @@ namespace Firearm.Controllers.Models
 
         public string kebele { get; set; }
 
-        public string SpecificArea { get; set; } 
+        public string SpecificArea { get; set; }
 
-        public string PhoneNumber { get; set; } 
+        public string PhoneNumber { get; set; }
 
         public string Email { get; set; }
 
@@ -65,5 +65,7 @@ namespace Firearm.Controllers.Models
         public string RegisteredBodyResponsibility { get; set; }
         public string RegisteredBodySignature { get; set; }
         public DateTime RegisteredBodyDate { get; set; }
+
+        public string holder { get; set; }
     }
 }

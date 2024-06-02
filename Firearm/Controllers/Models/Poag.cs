@@ -9,22 +9,22 @@ namespace Firearm.Controllers.Models
 
         public string NameOfOrganisation { get; set; }
 
-        public string sector  { get; set; }
+        public string sector { get; set; }
 
-        public string SizeOfCapital { get; set; } 
+        public string SizeOfCapital { get; set; }
 
-        public string Region { get; set; } 
+        public string Region { get; set; }
 
 
-        public string Subcity {  get; set; } 
-        
+        public string Subcity { get; set; }
+
         public string District { get; set; }
 
-        public string kebele { get; set; } 
+        public string kebele { get; set; }
 
-        public string SpecificArea { get; set; } 
+        public string SpecificArea { get; set; }
         public string PhoneNumber { get; set; }
-        public string Email { get; set; } 
+        public string Email { get; set; }
 
 
         /// <summary>
@@ -59,6 +59,8 @@ namespace Firearm.Controllers.Models
         public string RegisteredBodyResponsibility { get; set; }
         public string RegisteredBodySignature { get; set; }
         public DateTime RegisteredBodyDate { get; set; }
+
+        public string holder { get; set; }
 
 
     }

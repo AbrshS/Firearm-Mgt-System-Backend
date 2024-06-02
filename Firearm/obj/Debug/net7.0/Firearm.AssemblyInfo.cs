@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Firearm")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c17d27a5ad3c1daa5bb48359b97daec6f6bf6174")]
 [assembly: System.Reflection.AssemblyProductAttribute("Firearm")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Firearm")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
